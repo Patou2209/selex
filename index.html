@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Acceuil </title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />   
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="media_queries.css">
+        
+    </head>
+
+    <body>
+
+        <section id="header">
+            <a href="#"><img src="img/selex logo.jpg" alt="" class="logo"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html">Acceuil</a></li>
+                    <li><a href="#">Nos Services</a></li>
+                    <li><a href="about.html">a propos</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <a href="#" id="close"><i class="far fa-times"></i></a>
+                </ul>
+            </div>
+            <div class="mobile">
+                <i id="bar" class="fas fa-outdent"></i>   
+            </div>
+        </section>
+
+        <section id="hero">
+            
+            <h1>SELEX GENERAL TRAIDING</h1>
+            <h4 style="font-family: 'Satisfy', cursive !important;">Votre passerelle vers le commerce international</h4>
+
+            <a href="https://wa.me/+243836698982"><button>Contactez Nous &#8594;</button></a>
+        </section>
+
+       
+        
+        <section class="section-p1">
+            <marquee bgcolor="#041e42"  loop="-1" scrollamount="5" width="100%">Spécialiste de l'import-export entre la RDC et le reste du monde.</marquee>
+        </section>
+
+
+        
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Inscrivez-vous aux newsletters</h4>
+                <p>Recevez des mises à jour par e-mail sur nos <span>Services</span>.</p>
+            </div>
+            <form id="newsletterForm" class="form">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit" class="normal">S'abonner</button>
+            </form>
+        </section>
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="img/selex logo.jpg" alt="" width="50px" height="50px">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 
+                    33 Bis, Av. Ubangi, Q/Salongo, Lemba <br>et Gombe 
+                    / Rond point Forescom immeuble SEDEC shop 4
+                       Ville de Kinshasa
+</p>
+                <p><strong>Phone:</strong> +243836698982</p>
+                <p><strong>Ouvert:</strong> 08:00 - 16:00, Lun - Sam</p>
+                <div class="follow">
+                    <h4>suivez nous</h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-pinterest"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>A propos</h4>
+                <a href="#">A propos de Nous</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            
+            <div class="col install">
+                <h4>Installer l'application</h4>
+                <p>Depuis l'App Store ou Google Play</p>
+                <div class="row">
+                    <img src="img/pay/app.jpg" alt="">
+                    <img src="img/pay/play.jpg" alt="">
+                </div>
+                
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025, Selex. Tous droits réservés.</p>
+                <p>Designed by <span>TECHNOWEB</span></p>
+            </div>
+        </footer>
+
+            
+            <!-- JavaScript for slideshow -->
+            <script>
+                let slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) {slideIndex = 1}    
+                    slides[slideIndex-1].style.display = "block";  
+                    setTimeout(showSlides, 4000); // Change image every 4 seconds
+                }
+            </script>
+            <!--script pour la soumission des formulaires -->
+            <script>
+                const form = document.getElementById('myForm');
+            const newsletterForm = document.getElementById('newsletterForm');
+            const alertBox = document.getElementById('alertBox');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+            
+                const data = {
+                name: form.name.value,
+                email: form.email.value,
+                subject: form.subject.value,
+                message: form.message.value
+                };
+            // <!--le lien en bas est mon lien fournis  pour submit le formulaire via Formspree, le compte email qui recois ce formulaire est mentionner dans le compte Formspree lors de la creation du new project-->
+                try {
+                const response = await fetch('https://formspree.io/f/mzzeyygg', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+            
+                if (response.ok) {
+                    alertBox.textContent = "✅ Message sent successfully!";  // Message de succès (facultatif)
+                    alertBox.className = "custom-alert";
+                    alertBox.style.display = "block";
+                    form.reset(); // Réinitialisation du formulaire
+            
+                    setTimeout(() => {
+                    window.location.href = "index.html"; // Redirection vers page de remerciement
+                    }, 2000); // 2 secondes avant la redirection
+                } else {
+                    throw new Error("Form submission failed");
+                }
+                } catch (error) {
+                alertBox.textContent = "❌ An error occurred. Please try again.";
+                alertBox.className = "custom-alert error";
+                alertBox.style.display = "block";
+                }
+            });
+
+            // Formulaire newsletter
+            newsletterForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const data = {
+                email: newsletterForm.email.value
+                };
+
+                try {
+                const response = await fetch('https://formspree.io/f/mzzeyygg', { // tu peux aussi créer un formspree spécifique à la newsletter
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert("✅ Thank you for subscribing!");
+                    newsletterForm.reset();
+                } else {
+                    throw new Error("Subscription failed");
+                }
+                } catch (error) {
+                alert("❌ Error subscribing. Please try again later.");
+                }
+            });
+            </script>
+            <script src="script.js"></script>
+    </body>
+
+</html>

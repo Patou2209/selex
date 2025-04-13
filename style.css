@@ -1,0 +1,737 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 40px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+  
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+button.normal{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color : #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s ease;
+}
+button.white{
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color : #fff;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #fff;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+body {
+  width: 100%;
+}
+/* Animation pour faire glisser le header depuis la gauche */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%); /* Commence hors de l'écran à gauche */
+    opacity: 0; /* Invisible au début */
+  }
+  to {
+    transform: translateX(0); /* Position normale */
+    opacity: 1; /* Complètement visible */
+  }
+}
+/* Classe pour cacher le header avant l'animation */
+#header.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 80px;
+  animation: slideInFromLeft 1s ease-out; /* Applique l'animation */
+}
+#header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 60px;
+}
+#header .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#navbar li {
+  list-style: none;
+  margin: 0 20px;
+  position: relative;
+}
+#navbar li a {
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+#navbar li a:hover {
+  color: #041e42;
+  
+}
+#navbar li a:hover,
+#navbar li a.active {
+  color: #041e42; 
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #041e42;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+.mobile{
+  display: none;
+  align-items: center;
+}
+.mobile i{
+  font-size: 30px;
+  color: rgb(3, 3, 112);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.mobile i:hover{
+  color: #041e42;
+  background-color: #fff;
+}
+#close{
+  display: none;
+}
+
+
+#hero{
+  background-image: url("img/HEADER/hero.jpg");
+  background-repeat: no-repeat;
+  height:90vh;
+  width: 100%;
+  background-position: top 25% right 0%;
+  background-size: cover;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background: rgba(0, 0, 0, 0.5); /* Superposition semi-transparente noire */
+  z-index: 1; /* Place le pseudo-élément derrière le contenu */
+}
+
+#hero h1,
+#hero h4,
+#hero button {
+  position: relative; /* Nécessaire pour que le contenu soit au-dessus de l'effet */
+  z-index: 2;
+}
+#hero h4 {
+  padding-bottom:15px ;
+  color : #fff;
+}
+#hero h1 {
+  color: #fff;
+  padding: 15px 0;
+  letter-spacing: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+#hero button{
+  background-image:url("img/button.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 14px 80px 14px 65px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+}
+#banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("img/banner/b2.jpg");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+  }
+  #banner h4 {
+    color: #fff;
+    font-size: 16px;
+    
+  }
+  #banner h2 {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 0;
+    
+  }
+  #banner h2 span {
+    color: red;
+  }
+  #banner button:hover {
+    background:#307a5a;
+    color: #fff ;
+    
+  }
+  #sm-banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap : 20px;
+    
+  }
+  #sm-banner .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    padding-top: 0px !important;
+    
+  }
+  
+  #sm-banner .banner-box2{
+    background: transparent;
+    width: 45%;
+    height: 300px;
+    padding: 0;
+  }
+  #sm-banner .slideshow-container{
+    width: 100%;
+    height: 100%; 
+  }
+  .mySlides fade {
+    width: 100%;
+    height: 100%;
+    transition: 1s ease;
+  }
+  .mySlides fade img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    transition: 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    from {opacity: 0.4;} 
+    to {opacity: 1;}
+}
+
+  
+  #sm-banner h4{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  #sm-banner h2{
+    color: #000;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  #sm-banner span{
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    text-align: justify;
+    padding-top: 0px;
+    line-height: 25px;
+  }
+  #sm-banner .banner-box button{
+    background-color: #307a5a;
+    border: 1px solid #307a5a;
+  }
+  #sm-banner .banner-box:hover button{
+    background-color: #fff;
+    border: 1px solid #307a5a;
+    color: #307a5a;
+  }
+  marquee {
+    color: #fff;
+    font-weight: 400;
+  }
+  /* featured styles */
+  
+  #featured-page{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #featured-page .featured-page-text{
+    display: flex;
+    flex-direction: column;
+    width : 45%;
+  }
+  #featured-page .featured-page-text h4{
+    padding-bottom: 20px;
+  }
+  
+  #pro-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    justify-items: center;
+  }
+  #pro-container .featured-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  #pro-container .featured-box:hover{
+    color: #307a5a;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor : pointer;
+  }
+  #pro-container .featured-box span:hover{
+    color: #307a5a;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor : pointer;
+  }
+  #pro-container .featured-box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+
+  #newsletter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url("img/banner/b14.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #041e42;
+    
+  }
+  #newsletter h4{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  #newsletter p{
+    color: #888383;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  #newsletter p span{
+    color:orange;
+  }
+  #newsletter .form{
+    display: flex;
+    width: 40%;
+  }
+  #newsletter input{
+    width: 100%;
+    padding: 0 1.25em;
+    height: 3.125rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  #newsletter button{
+    background-color: #307a5a;
+    color: #fff;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+/* differents pages header page style */
+#page-header{
+    background-image: url("img/banner/b1.jpg");
+    width: 100%;
+    height:40vh;
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+  }
+  #page-header h2,
+  #page-header h1,
+  #page-header h4{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  #page-header p{
+    color: #fff;
+  }
+
+ 
+  #page-header.power-header{
+    background-image: url("img/powerback.jpg");
+  }
+  #page-header.datacenter-header{
+    background-image: url("img/databack.jpg");
+  }
+  #page-header.resource-header{
+    background-image: url("img/efficiency.jpg");
+  }
+  #page-header.fire-header{
+    background-image: url("img/fireok.jpg");
+  }
+  #page-header.control-header{
+    background-image: url("img/controlb.jpg");
+  }
+  #page-header.capacity-header{
+    background-image: url("img/capacity.jpg");
+  }
+
+   /* solutions page style*/
+   #page-header.solutions-header{
+    background-image: url("img/energy2.jpg");
+  }
+  #page-header.solutions-header h1,
+  #page-header.solutions-header h4,
+  #page-header.power-header h4,
+  .contact h4{
+    color: #fff;
+  }
+  
+
+  /* about page style*/
+
+ #page-header.about-header{
+    background-image: url("img/about/banner.png");
+   }
+  
+   #about-head {
+   display: flex;
+   align-items: center;
+   }
+   #about-head div{
+   padding-left: 14px;
+   }
+   #about-head p{
+    text-align: justify;
+   }
+   #about-head img{
+    width: 50%;
+    height: auto;
+   }
+   #about-app{
+    text-align: center;
+   }
+   #about-app .video {
+    width: 50%;
+    height: 100%;
+    margin: 10px auto 0 auto;
+   }
+   #about-app .video video {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+   }
+  
+   /* contact page styles */
+   #page-header.contact{
+    background-image: url("img/about/banner.png");
+   }
+   #contact-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   #contact-details .details {
+    width: 40%;
+   }
+   #contact-details .details span {
+    font-size: 12px;
+    
+   }
+   #contact-details .details span,
+   #contact-details .details h3,
+   #form-details form span {
+    font-size: 12px;
+    padding-bottom: 15px ;
+    padding-top: 15px ;
+  
+   }
+  
+   #contact-details .details h2,
+   #form-details form h2 {
+    font-size: 18px;
+    margin: 0;
+   }
+   #contact-details .details h3 {
+    font-size: 15px;
+    line-height: 30px;
+   
+   }
+   #contact-details .details li {
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+   }
+   #contact-details .details li i {
+    font-size: 14px;
+    padding-right:22px ;
+   }
+   #contact-details .details li p {
+    margin:0;
+    font-size: 14px;
+   }
+  #contact-details .map {
+      width: 55%;
+      height: 400px;
+    }
+  #contact-details .map iframe {
+      width: 100%;
+      height: 100%;
+    }
+  
+    #form-details{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin: 30px;
+      padding: 40px;
+      border: 1px solid #e1e1e1;
+    }
+  
+    #form-details form {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+    }
+    #form-details .people {
+      width: 50%;
+    }
+    #form-details form input,
+    #form-details form textarea {
+      width:100%;
+      padding: 12px 15px;
+      outline: none;
+      margin-bottom: 20px;
+      border: 1px solid #e1e1e1;
+    }
+    #form-details form button {
+      background-color: #307a5a;
+      color: #fff;
+    }
+    #form-details .people div {
+      padding-bottom: 25px;
+      display: flex;
+      align-items: flex-start;
+    }
+    #form-details .people img {
+      width:65px;
+      height: 65px;
+      margin-right: 15px;
+    }
+    #form-details .people p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 25px;
+    }
+    #form-details .people div span {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+    }
+    .custom-alert {
+      display: none;
+      padding: 16px;
+      background-color: #307a5a;
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  
+    .custom-alert.error {
+      background-color: #000;
+    }
+  
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  footer .logo{
+    margin-bottom: 30px;
+  }
+  footer h4{
+    font-size: 13px;
+    padding-bottom: 20px;
+  }
+  footer p{
+    font-size: 12px;
+    margin: 0 0 8px 0;
+  }
+  footer  a{
+    text-decoration: none;
+    color: #222;
+    transition: 0.3s ease;
+    margin-bottom: 12px;
+  }
+  footer  a:hover{
+    color: #307a5a;
+  }
+  footer p span{
+    color: orange;
+    font-weight: 700;
+  }
+  footer .follow{
+    margin-top: 20px;
+  }
+  footer .follow i{
+    padding-right: 4px;
+    color: #307a5a;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+  }
+  footer .follow i:hover{
+    color: #fff;
+    background-color: #307a5a;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  footer .install .row img{
+    border: 1px solid #307a5a;
+    border-radius: 6px;
+  }
+  footer .install img{
+    margin: 10px 0 15px 0;
+  }
+  
+  footer .copyright{
+    width: 100%;
+    text-align: center;
+  }
