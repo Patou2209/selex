@@ -21,6 +21,7 @@ h1 {
 #titre{
   font-size: 15px;
   color: #041e42;
+  padding-bottom: 0;
 }
 
 h2 {
