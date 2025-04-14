@@ -18,6 +18,10 @@ h1 {
   line-height: 64px;
   color: #222;
 }
+#titre{
+  font-size: 15px;
+  color: #041e42;
+}
 
 h2 {
   font-size: 46px;
@@ -43,7 +47,7 @@ p {
 }
 
 .section-p1 {
-  padding: 40px 80px;
+  padding: 20px 40px;
 }
 
 .section-m1 {
@@ -214,6 +218,10 @@ body {
   padding-bottom:15px ;
   color : #fff;
 }
+#hero p {
+ 
+  color : #fff;
+}
 #hero h1 {
   color: #fff;
   padding: 15px 0;
@@ -231,6 +239,25 @@ body {
   font-size: 15px;
   border: none;
 }
+#fieldset{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 80%;
+  border: 3px solid #041e42;
+  margin: auto;
+  margin-bottom: 15px;
+}
+#fieldset h3{
+  color: #041e42;
+  font-size: 17px;
+  font-weight: 500;
+}
+#fieldset img{
+  width: 100%;
+  height: 350px;
+}
+
 #banner{
     display: flex;
     flex-direction: column;

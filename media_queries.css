@@ -166,6 +166,10 @@
      #featured-page .featured-page-text{
       min-width : 100%;
     }
+    #fieldset img{
+      width: 100%;
+      height: 200px;
+    }
       
   }
 
@@ -243,12 +247,18 @@
   #featured-page .featured-page-text{
     min-width : 100%;
   }
+  #fieldset img{
+    width: 100%;
+    height: 250px;
+  }
 }
 
 
   /* Small devices */
   @media (max-width: 477px) {
-  
+    .section-p1 {
+      padding: 15px 20px;
+    }
     
     #page-header h1{
       color: #fff;
@@ -420,5 +430,9 @@
       /* featured-page styles */
       #featured-page .featured-page-text{
         min-width : 100%;
+      }
+      #fieldset img{
+        width: 100%;
+        height: 200px;
       }
     }
